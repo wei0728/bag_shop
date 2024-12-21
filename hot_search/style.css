@@ -165,58 +165,17 @@ body {
 
 
 /* 響應式設計，確保在不同螢幕上有適當的間距和大小 */
-@media (max-width: 800px) {
-    .introduction-container {
-        max-width: 90%;
-    }
 
-    .gallery-container {
-        max-width: 90%;
-    }
+@media (max-width:500px){
+.main-content {
+    width: 100%;
+}
+.gallery-container {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
 }
 
-@media (max-width: 500px) {
-    .search-bar {
-        max-width: 80%;
-        height: 40px;
-        border-radius: 20px;
-        font-size: 14px;
-    }
-
-    .gallery-button {
-        padding: 8px;
-        font-size: 16px;
-    }
-
-    .gallery-container {
-        width: 80%;
-        height: 40%;
-        margin: 20px 0;
-    }
-
-    .introduction-container {
-        max-width: 90%;
-        margin: 20px auto;
-        padding: 15px;
-    }
-
-    .introduction-container h2 {
-        font-size: 1.5em;
-        margin-bottom: 15px;
-    }
-
-    .content {
-        font-size: 16px;
-        padding: 15px;
-    }
-
-    .navbar {
-        top: 5px;
-        left: 5px;
-    }
-.menu-btn {
-    width: 70px;
-    height: 60px;
-}
 
 }
