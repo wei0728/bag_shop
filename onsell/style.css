@@ -1,0 +1,146 @@
+/* style.css */
+
+/* 重置預設樣式，確保一致性 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #202020;
+}
+
+/* 全局字體設定 */
+body {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 側邊菜單 */
+/* 其他樣式省略，確保所有必要樣式均在 CSS 中定義 */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* 增加主容器間的間隙 */
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 30%;
+}
+
+.image-group img {
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    border-width: medium;
+    background-color: #3548A2;
+    max-width: 278pt;
+}
+
+.image-group img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 800px) {
+    .introduction-container {
+        max-width: 90%;
+    }
+
+    .gallery-container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+    .search-bar {
+        max-width: 80%;
+        height: 40px;
+        border-radius: 20px;
+        font-size: 14px;
+    }
+
+    .gallery-button {
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    .gallery-container {
+        width: 80%;
+        height: 200px; /* 調整高度以適應較小螢幕 */
+        margin: 20px 0;
+    }
+
+    .introduction-container {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .introduction-container h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .content {
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    .navbar {
+        top: 5px;
+        left: 5px;
+    }
+
+    /* 調整菜單按鈕大小 */
+    .menu-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+    width: 70px;
+    height: 60px;
+    }
+
+    /* 使用漢堡圖示替代文字 */
+    .menu-btn i {
+        font-size: 20px;
+        margin-right: 0;
+    }
+
+    .menu-btn span {
+        display: none; /* 隱藏文字，只顯示圖示 */
+    }
+html {
+    overflow-x: hidden;
+}
+}

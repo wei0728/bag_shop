@@ -1,0 +1,133 @@
+/* style.css */
+
+/* 重置預設樣式，確保一致性 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #202020;
+    height: 100%;
+    overflow-x: hidden; /* 防止水平滾動 */
+}
+
+body {
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    margin: 0;
+    height: 100vh; /* 確保 body 高度滿版 */
+    display: flex; /* 使用 Flexbox 進行佈局 */
+}
+
+/* 主要內容區域 */
+.main-content {
+    flex: 1; /* 佔據剩餘空間 */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 滿版高度 */
+    overflow: hidden; /* 防止內部滾動 */
+    transition: transform 0.3s ease-in-out
+}
+
+/* 內容包裝器，使用 Flex 進行左右佈局 */
+.content-wrapper {
+    display: flex;
+    flex: 1; /* 佔據 main-content 的全部高度 */
+    overflow: hidden; /* 防止內部元素溢出 */
+}
+
+/* 左側的 intro-pic 圖片 */
+#intro-pic {
+    width: 50%; /* 根據需要調整寬度 */
+    max-width: 400px; /* 可選，限制最大寬度 */
+    height: 100%; /* 滿高 */
+    object-fit: cover; /* 保持圖片比例，並裁剪多餘部分 */
+    border-radius: 12px;
+    margin-right: 20px; /* 右側間距 */
+    flex-shrink: 0; /* 防止縮小 */
+}
+
+/* 右側的圖片組容器 */
+.image-group {
+    flex: 1; /* 佔據剩餘空間 */
+    overflow-y: auto; /* 允許垂直滾動 */
+    background-color: #f0f0f0; /* 背景顏色，可自定義 */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 滾動條樣式（可選） */
+.scroll-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 圖片樣式 */
+.scroll-bar img {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #3548A2;
+    max-width: 278pt; /* 可根據需要調整 */
+}
+
+.scroll-bar img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+
+@media (max-width: 800px) {
+
+    /* 調整 intro-pic 的寬度 */
+    #intro-pic {
+    height: 50%;
+
+
+
+    }
+
+    .image-group {
+    padding: 8px;
+    max-width: 40%;
+    }
+.content-wrapper {
+    width: 100%;
+}
+.main-content {
+    width: 100%;
+}
+
+
+.scroll-bar   {
+    width: 100%;
+}
+
+.image-group img {
+    width: 100%;
+
+}
+
+}
+
+@media (max-width: 500px) {
+
+    /* 調整 intro-pic 的寬度和尺寸 */
+    #intro-pic {
+    width: 79%;
+    max-width: 250px;
+    }
+
+    /* 調整 image-group 的內邊距和外觀 */
+    .image-group {
+        padding: 5px;
+        border-radius: 6px;
+    }
+
+    /* 調整滾動條內的圖片 */
+    .scroll-bar img {
+        max-width: 200pt;
+    }
+}

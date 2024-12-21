@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: #202020;
+}
+/* 全局字體設定 */
+body {
+    font-family: 'Noto Sans TC', Arial, sans-serif; /* 確保字體加載 */
+    padding: 20px; /* 避免內容貼邊 */
+    display: flex;
+    flex-direction: column; /* 垂直排列子元素 */
+    align-items: center; /* 水平置中 */
+    min-height: 100vh; /* 至少佔滿視窗高度 */
+}
+.side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgba(40, 40, 40, 0.95);
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1001;
+}
+
+.side-menu a, .side-munu div {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.side-menu a:hover, .side-menu div:hover {
+    background-color: rgba(133, 133, 133, 0.8);
+}
+
+/* 側邊菜單的關閉按鈕 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 主內容滑動效果 */
+.main-content.shifted {
+    transform: translateX(250px);
+}
+
+/* 導航按鈕的樣式 */
+.navbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+}
+
+.menu-btn {
+    background-color: rgba(73, 73, 73, 0.7);
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: rgb(151, 151, 151);
+    transform: scale(1.05);
+}
+
+.menu-item {
+    padding: 0px;
+    position: relative;
+}
+
+.submenu-toggle {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 15px 25px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.submenu-toggle:hover {
+    background-color: rgba(133, 133, 133, 0.8);
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s ease-out;
+    background-color: rgba(50, 50, 50, 0.9);
+}
+
+.menu-item.active .submenu {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+.submenu a {
+    padding: 10px 45px;
+    font-size: 16px;
+}
+
+.submenu a:hover {
+    background-color: rgba(46, 46, 46, 0.8);
+}
+

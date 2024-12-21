@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>首頁</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+<link href="../html/sidemenu/style.css" rel="stylesheet" type="text/css">
+<script src = "../html/sidemenu/style.js"></script>
+<script src = "style.js"></script>
+</head>
+<body>
+	<div id = "menu-container"></div>
+	<div id="mainContent" class="main-content">
+		<input type="text" class="search-bar">
+		<div class="gallery-container">        
+			<div class="gallery-slider" id="gallerySlider">
+				<div id = "slide" class="slide">
+					<img src="bag2.jpg" onclick = "to_hot()" alt="圖片展示 7">
+				</div>
+				<div class="slide">
+					<img src="bag3.jpg" onclick = "to_hot()" alt="圖片展示 1">
+				</div>
+				<div class="slide">
+					<img src="bag4.jpg" onclick = "to_hot()" alt="圖片展示 2">
+				</div>
+				<div class="slide">
+					<img src="bag6.jpg" onclick = "to_hot()" alt="圖片展示 3">
+				</div>
+			</div>
+			<button id="prevBtn" class="gallery-button">&lt;</button>
+			<button id="nextBtn" class="gallery-button">&gt;</button>
+		</div>
+		<div class="introduction-container">
+			<h2 class="introduction">介紹</h2>
+			<p class="content">
+				位於市中心核心地段的這家服飾店，是追求時尚與品質消費者的理想選擇。我們致力於提供最新潮流趨勢與多元風格的服裝，滿足不同顧客的個性化需求，讓每一位踏入店內的顧客都能找到心儀的穿搭單品。
+
+店內精選來自國內外知名設計師品牌，涵蓋男女裝、童裝及配飾等多元商品。產品線從休閒時尚到正式場合應有盡有，無論是日常穿搭還是特殊場合，我們都能為您提供完美的服飾選擇。此外，我們定期更新新品，緊跟季節變換與流行趨勢，確保顧客總能享有最新、最時尚的選擇。
+
+環境優雅舒適，採用現代簡約設計，搭配充足的照明與寬敞的陳列空間，讓顧客在選購時感受到輕鬆愉快的氛圍。我們的專業銷售團隊經驗豐富，熱情友善，能根據顧客的需求提供專業的穿搭建議與個性化服務，確保每位顧客都能找到最適合自己的風格。
+
+除了提供優質的商品與服務外，我們還舉辦各類時尚活動，如新品發表會、時尚講座及會員專屬優惠，讓顧客不僅能購物，還能享受豐富的時尚體驗。我們重視每一位顧客的滿意與回饋，持續努力提升服務品質，成為您信賴的時尚夥伴。
+
+無論您是追求經典優雅，還是熱愛前衛潮流，我們的服飾店都將是您不可錯過的時尚目的地。歡迎蒞臨，探索屬於您的獨特風格！
+			</p>
+		</div>
+	</div>
+</body>
+</html>
