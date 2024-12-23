@@ -1,138 +1,180 @@
+/* Reset 和全局樣式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html{
+
+a{
+	text-decoration: none;
+}
+
+html {
     background-color: #202020;
 }
-/* 全局字體設定 */
+
 body {
-    font-family: 'Noto Sans TC', Arial, sans-serif; /* 確保字體加載 */
-    padding: 20px; /* 避免內容貼邊 */
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    padding: 20px;
     display: flex;
-    flex-direction: column; /* 垂直排列子元素 */
-    align-items: center; /* 水平置中 */
-    min-height: 100vh; /* 至少佔滿視窗高度 */
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
-.side-menu {
-    height: 100%;
-    width: 250px;
+
+/* 水平導航欄樣式 */
+.navbar {
+    width: 100%;
+    background-color: rgba(40, 40, 40, 0.95);
     position: fixed;
     top: 0;
-    left: -250px;
-    background-color: rgba(40, 40, 40, 0.95);
-    padding-top: 60px;
-    transition: left 0.3s ease;
-    z-index: 1001;
+    left: 0;
+    z-index: 1000;
 }
 
-.side-menu a, .side-munu div {
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #ffffff;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-.side-menu a:hover, .side-menu div:hover {
-    background-color: rgba(133, 133, 133, 0.8);
-}
-
-/* 側邊菜單的關閉按鈕 */
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 36px;
-    color: #ffffff;
-    text-decoration: none;
-    transition: transform 0.3s ease-in-out;
-}
-
-/* 主內容滑動效果 */
-.main-content.shifted {
-    transform: translateX(250px);
-}
-
-/* 導航按鈕的樣式 */
-.navbar {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index: 50;
-}
-
-.menu-btn {
-    background-color: rgba(73, 73, 73, 0.7);
-    color: #ffffff;
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.menu-btn:hover {
-    background-color: rgb(151, 151, 151);
-    transform: scale(1.05);
+.nav-logo {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.menu-item {
-    padding: 0px;
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
     position: relative;
 }
 
-.submenu-toggle {
-    background: none;
-    border: none;
+.nav-link {
     color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
     font-size: 18px;
-    padding: 15px 25px;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
     transition: background-color 0.3s;
 }
 
-.submenu-toggle:hover {
+.nav-link:hover {
     background-color: rgba(133, 133, 133, 0.8);
 }
 
-.submenu {
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: max-height 0.3s ease-out;
+.arrow {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* 下拉菜單樣式 */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
     background-color: rgba(50, 50, 50, 0.9);
+    min-width: 160px;
+    z-index: 1000;
+    flex-direction: column;
 }
 
-.menu-item.active .submenu {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+.dropdown li {
+    width: 100%;
 }
 
-.submenu a {
-    padding: 10px 45px;
+.dropdown a {
+    padding: 10px 20px;
+	color: white;
     font-size: 16px;
 }
 
-.submenu a:hover {
-    background-color: rgba(46, 46, 46, 0.8);
+.dropdown a:hover {
+    background-color: rgba(133, 133, 133, 0.8);
 }
 
-@media (max-width: 500px) {
-    .navbar {
-        top: 5px;
-        left: 5px;
+/* 顯示下拉菜單 */
+.nav-item:hover .dropdown {
+    display: flex;
+}
+
+/* 手機響應式設計 */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 60px;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(40, 40, 40, 0.95);
+        transition: left 0.3s ease;
     }
-.menu-btn {
-    width: 70px;
-    height: 60px;
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 15px 20px;
+        border-top: 1px solid #555;
+    }
+
+    .dropdown {
+        position: static;
+        top: 0;
+    }
+
+    .nav-item:hover .dropdown {
+        display: none;
+    }
+
+    .nav-item .dropdown {
+        display: none;
+    }
+
+    .nav-item.active .dropdown {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+        background-color: rgba(73, 73, 73, 0.7);
+        color: #ffffff;
+        padding: 10px 20px;
+        font-size: 24px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .menu-btn:hover {
+        background-color: rgb(151, 151, 151);
+        transform: scale(1.05);
+    }
+
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
 }
 
-
+/* 隱藏菜單按鈕在桌面視圖 */
+@media (min-width : 824px ){
+    .menu-btn {
+        display: none;
+    }
 }

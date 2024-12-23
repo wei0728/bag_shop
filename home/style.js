@@ -1,22 +1,19 @@
-// style.js
-
-document.addEventListener('DOMContentLoaded', async() => {
+document.addEventListener('DOMContentLoaded', () => {
     initializeGallerySlider({
         gallerySliderId: 'gallerySlider',
         prevBtnId: 'prevBtn',
         nextBtnId: 'nextBtn'
     });
 });
-function to_hot(){
-    location.href = "../hot_search/hot_search.html";
-}
-/*
-* @param {Object} params - 配置參數
-* @param {string} params.gallerySliderId - 畫廊滑動區域的 ID
-* @param {string} params.prevBtnId - 上一張按鈕的 ID
-* @param {string} params.nextBtnId - 下一張按鈕的 ID
-*/
-    function initializeGallerySlider({ gallerySliderId, prevBtnId, nextBtnId }) {
+
+/**
+ * 初始化畫廊滑動功能
+ * @param {Object} params - 配置參數
+ * @param {string} params.gallerySliderId - 畫廊滑動區域的 ID
+ * @param {string} params.prevBtnId - 上一張按鈕的 ID
+ * @param {string} params.nextBtnId - 下一張按鈕的 ID
+ */
+function initializeGallerySlider({ gallerySliderId, prevBtnId, nextBtnId }) {
     const gallerySlider = document.getElementById(gallerySliderId);
     const prevBtn = document.getElementById(prevBtnId);
     const nextBtn = document.getElementById(nextBtnId);
@@ -27,8 +24,8 @@ function to_hot(){
     // 計算滑動距離
     function updateSlider() {
         if (images.length === 0) return;
-        const slideWidth = images[0].clientWidth;
-        gallerySlider.style.transform = `translateX(-${currentIndex * 800}px)`;
+        const slideWidth = document.getElementById('slide').offsetWidth;
+        gallerySlider.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
 
     // 下一張
@@ -58,4 +55,8 @@ function to_hot(){
 
     // 初始設定
     updateSlider();
-    }
+}
+
+function to_hot(){
+    location.href = "../hot_search/hot_search.html";
+}

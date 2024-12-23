@@ -25,6 +25,8 @@ body {
     min-height: 100vh; /* 至少佔滿視窗高度 */
     transition: transform 0.3s ease-in-out;
     width: 100%;
+    top: 40px;
+    position: relative;
 }
 
 /* 搜尋欄的樣式 */
@@ -148,6 +150,10 @@ body {
     padding: 20px; /* 內邊距 */
     border-radius: 10px; /* 圓角 */
     text-align: left; /* 內容文字左對齊 */
+}
+body {
+}
+.main-content {
 }
 
 /* 響應式設計，確保在不同螢幕上有適當的間距和大小 */

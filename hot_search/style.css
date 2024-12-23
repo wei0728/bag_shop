@@ -169,6 +169,9 @@ body {
 @media (max-width:500px){
 .main-content {
     width: 100%;
+    display: inline;
+    position: relative;
+    top: 40px;
 }
 .gallery-container {
     margin-top: 0px;
