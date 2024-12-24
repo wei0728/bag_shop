@@ -27,7 +27,9 @@ body {
     flex-direction: column;
     height: 100vh; /* 滿版高度 */
     overflow: hidden; /* 防止內部滾動 */
-    transition: transform 0.3s ease-in-out
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    top: 45px;
 }
 
 /* 內容包裝器，使用 Flex 進行左右佈局 */
@@ -79,3 +81,17 @@ body {
 }
 
 
+
+@media (max-width:500px){
+.main-content {
+    position: relative;
+    top: 45px;
+}
+#intro-pic {
+    height: 50%;
+    margin-right: 0px;
+}
+
+
+
+}

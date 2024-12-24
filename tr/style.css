@@ -1,81 +1,84 @@
-/* style.css */
-
-/* 重置預設樣式，確保一致性 */
+/* 重置一些基本樣式 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    background-color: #202020;
-    height: 100%;
-    overflow-x: hidden; /* 防止水平滾動 */
-}
-
 body {
-    font-family: 'Noto Sans TC', Arial, sans-serif;
-    margin: 0;
-    height: 100vh; /* 確保 body 高度滿版 */
-    display: flex; /* 使用 Flexbox 進行佈局 */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #202020;
+    color: #333;
+    padding: 20px;
 }
 
-/* 主要內容區域 */
-.main-content {
-    flex: 1; /* 佔據剩餘空間 */
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* 滿版高度 */
-    overflow: hidden; /* 防止內部滾動 */
-    transition: transform 0.3s ease-in-out
-}
-
-/* 內容包裝器，使用 Flex 進行左右佈局 */
-.content-wrapper {
-    display: flex;
-    flex: 1; /* 佔據 main-content 的全部高度 */
-    overflow: hidden; /* 防止內部元素溢出 */
-}
-
-/* 左側的 intro-pic 圖片 */
-#intro-pic {
-    width: 50%; /* 根據需要調整寬度 */
-    max-width: 400px; /* 可選，限制最大寬度 */
-    height: 100%; /* 滿高 */
-    object-fit: cover; /* 保持圖片比例，並裁剪多餘部分 */
-    border-radius: 12px;
-    margin-right: 20px; /* 右側間距 */
-    flex-shrink: 0; /* 防止縮小 */
-}
-
-/* 右側的圖片組容器 */
-.image-group {
-    flex: 1; /* 佔據剩餘空間 */
-    overflow-y: auto; /* 允許垂直滾動 */
-    background-color: #f0f0f0; /* 背景顏色，可自定義 */
-    padding: 10px;
-    border-radius: 8px;
-}
-
-/* 滾動條樣式（可選） */
-.scroll-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+/* 主要內容區域樣式 */
+#mainContent {
+    max-width: 800px;
+    margin: 0 auto; /* 水平居中 */
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-right: 70px;
+    padding-left: 70px;
+    padding-bottom: 70px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    flex: 1;
 }
 
 /* 圖片樣式 */
-.scroll-bar img {
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    background-color: #3548A2;
-    max-width: 278pt; /* 可根據需要調整 */
+#tr-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 20px auto; /* 居中並在下方添加間距 */
+    border-radius: 10px; /* 圓角效果 */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 輕微陰影 */
 }
 
-.scroll-bar img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+/* 內部標題樣式 */
+#mainContent section h2 {
+    margin-bottom: 10px;
+    color: #35424a;
+    border-bottom: 2px solid #e8491d;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
+/* 列表樣式 */
+#mainContent ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
 
+#mainContent ul li {
+    margin-bottom: 8px;
+}
+
+/* 鏈接樣式 */
+#mainContent a {
+    color: #e8491d;
+    text-decoration: none;
+}
+
+#mainContent a:hover {
+    text-decoration: underline;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* 減少內邊距以適應小屏幕 */
+    }
+
+    #mainContent {
+    padding: 15px;
+    margin-top: 0px;
+    }
+
+    #tr-img {
+        margin-bottom: 15px;
+    }
+}

@@ -48,6 +48,8 @@ header h1 {
     gap: 5px; /* 增加主容器間的間隙 */
     justify-content: center;
     transition: transform 0.3s ease-in-out;
+    position: relative;
+    top: 45px;
 }
 
 .image-group {
@@ -78,6 +80,11 @@ header h1 {
 .main-content {
     position: relative;
     top: 40px;
+    width: 100%;
 }
+.image-group {
+    width: 49%;
+}
+
 
 }
